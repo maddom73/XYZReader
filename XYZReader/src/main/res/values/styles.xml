@@ -26,4 +26,10 @@
     <style name="Theme.Bacon.Main" parent="@style/Theme.Bacon" />
     <style name="Theme.Bacon.Detail" parent="@style/Theme.Bacon" />
 
+    <style name="TransparentText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#00000000</item>
+    </style>
+    <style name="GreyText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#666666</item>
+    </style>
 </resources>

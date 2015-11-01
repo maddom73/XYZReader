@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
@@ -41,27 +40,20 @@ public class ArticleListActivity extends AppCompatActivity implements
 
     private RecyclerView mRecyclerView;
     private Snackbar snackBar;
-    private CollapsingToolbarLayout collapse;
-    private Toolbar mToolbar;
+    private TextView appTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        final View toolbarContainerView = findViewById(R.id.toolbar_container);
-        collapse=(CollapsingToolbarLayout) findViewById(R.id.collapseToolbar);
-        setSupportActionBar(mToolbar);
-        collapse.setTitle("Title");
-        collapse.setCollapsedTitleTextColor(Color.parseColor("#FFFFFF"));
-        collapse.setExpandedTitleColor(Color.parseColor("#FFFFFF"));
-        collapse.setStatusBarScrimColor(Color.parseColor("#FFFFFF"));
+        appTitle = (TextView) findViewById(R.id._title);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
 
         if (savedInstanceState == null) {
             refresh();
         }
+        appTitle.setText(getString(R.string.app_name));
     }
 
     private void refresh() {

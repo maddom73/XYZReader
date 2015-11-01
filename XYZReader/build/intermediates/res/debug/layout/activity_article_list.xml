@@ -22,10 +22,10 @@
         android:elevation="@dimen/elevation">
 
         <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/collapseToolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:expandedTitleTextAppearance="@style/TransparentText"
             app:title="Custom Layout" >
 
             <android.support.v7.widget.Toolbar
@@ -45,7 +45,18 @@
                     app:layout_collapseMode="pin"
                     android:src="@drawable/logo"/>
 
+                <TextView
+                    android:id="@+id/_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/detail_title_text_size"
+                    android:lineSpacingMultiplier="0.9" />
             </android.support.v7.widget.Toolbar>
+
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
