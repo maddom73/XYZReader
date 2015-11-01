@@ -22,9 +22,11 @@
         android:elevation="@dimen/elevation">
 
         <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapseToolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="Custom Layout" >
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
