@@ -7,10 +7,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -32,17 +35,28 @@ import com.example.xyzreader.data.UpdaterService;
  * touched, lead to a {@link ArticleDetailActivity} representing item details. On tablets, the
  * activity presents a grid of items as cards.
  */
-public class ArticleListActivity extends ActionBarActivity implements
+public class ArticleListActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
 
     private RecyclerView mRecyclerView;
     private Snackbar snackBar;
+    private CollapsingToolbarLayout collapse;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        final View toolbarContainerView = findViewById(R.id.toolbar_container);
+        collapse=(CollapsingToolbarLayout) findViewById(R.id.collapseToolbar);
+        setSupportActionBar(mToolbar);
+        mToolbar.setTitle("Title");
+        collapse.setTitle("Title");
+        collapse.setCollapsedTitleTextColor(Color.parseColor("#FFFFFF"));
+        collapse.setExpandedTitleColor(Color.parseColor("#FFFFFF"));
+        collapse.setStatusBarScrimColor(Color.parseColor("#FFFFFF"));
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
 
