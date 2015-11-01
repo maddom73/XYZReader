@@ -52,7 +52,6 @@ public class ArticleListActivity extends AppCompatActivity implements
         final View toolbarContainerView = findViewById(R.id.toolbar_container);
         collapse=(CollapsingToolbarLayout) findViewById(R.id.collapseToolbar);
         setSupportActionBar(mToolbar);
-        mToolbar.setTitle("Title");
         collapse.setTitle("Title");
         collapse.setCollapsedTitleTextColor(Color.parseColor("#FFFFFF"));
         collapse.setExpandedTitleColor(Color.parseColor("#FFFFFF"));
